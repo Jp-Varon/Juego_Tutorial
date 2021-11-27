@@ -23,4 +23,13 @@ public class Jugador : MonoBehaviour
             rigidbody2D.AddForce(new Vector2(0, FuerzaSalto));
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Suelo")
+        {
+            animator.SetBool("EstaSaltando", false);
+        }
+
+    }
 }
